@@ -8,7 +8,43 @@
     <link rel="stylesheet" href="mediaQueries.css">
 </head>
 <body>
-    Hello!
+    <header>
+        <nav id="desktop-nav">
+            <div class="logo"><img src="Assets/Images/logo (white).png" alt="Jace Logo" style="width:50px;height:50px;"></div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Experience">Experience</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Hobbies">Hobbies</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="hamburger-nav">
+            <div class="logo"><img src="Assets/logo (white).png" alt="Jace Logo"></div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="#about" onclick="toggleMenu()" >About</a></li>
+                    <li><a href="#Experience" onclick="toggleMenu()" >Experience</a></li>
+                    <li><a href="#Projects" onclick="toggleMenu()" >Projects</a></li>
+                    <li><a href="#Hobbies" onclick="toggleMenu()" >Hobbies</a></li>
+                    <li><a href="#Contact" onclick="toggleMenu()">Contact</a></li>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+    </main>
+
+
     <script src="script.js"></script>
     
 </body>
