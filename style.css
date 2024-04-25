@@ -258,6 +258,7 @@ main {
     pointer-events: none;
 }
 
+/* Vignette */
 .vignette {
     position: absolute;
     z-index: 100;
