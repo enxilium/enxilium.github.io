@@ -6,22 +6,30 @@
     src: url("Assets/Fonts/full-sans-lc-30-light.otf");
 }
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box
 }
 
 header {
     position: absolute;
     width: 100%;
-    
+    z-index: 9999;
+    padding: 0.9rem 0;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rbga(255, 255, 255, 1);
 }
 
-nav {
+header nav {
     font-family: 'Spectral SC', serif;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 17vh;
+    max-width: 1650px;
+    margin: 0 auto;
+    padding: 0 2 rem;
+    height: 10vh;
 }
 
 body {
@@ -32,12 +40,14 @@ html {
     scroll-behavior: smooth;
 }
 
-p {
-    color: rgb(85, 85, 85);
+::selection {
+    background-color: #0f2237;
 }
+
+
 /* Transition */
 
-a, .btn {
+a, .logo, .btn {
     transition: all 300ms ease;
 }
 
@@ -70,7 +80,8 @@ a:hover {
 }
 
 .logo:hover {
-    cursor: default;
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 /* Hamburger Menu (Mobile) */
@@ -96,7 +107,7 @@ a:hover {
 .hamburger-icon span {
     width: 100%;
     height: 2px;
-    background-color: black;
+    background-color: rgb(231, 231, 231);
     transition: all 0.3 ease-in-out;
 }
 
@@ -112,6 +123,148 @@ a:hover {
 }
 
 main {
-    background-color: rgb(11, 11, 78);
+    position: relative;
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.layer7 {
+    position: absolute;
+    width: 1920px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1
+}
+
+.layer6 {
+    position: absolute;
+    width: 1920px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2
+}
+
+.layer5 {
+    position: absolute;
+    width: 1920px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3
+}
+
+.layer4 {
+    position: absolute;
+    width: 1920px;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4
+}
+
+.fog {
+    position: absolute;
+    width: 1920px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5
+}
+
+.layer3 {
+    position: absolute;
+    width: 455px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-15%, -50%);
+    z-index: 6
+}
+
+.name {
+    position: absolute;
+    z-index: 7;
+    display: flex;
+    width: 100vw;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Full Sans LC";
+    font-size: 10.5rem;
+    letter-spacing: 35px;
+    pointer-events: auto !important;
+}
+
+.layer2 {
+    position: absolute;
+    width: 1920px;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8
+}
+
+.layer1 {
+    position: absolute;
+    width: 1920px;
+    top: 77%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9
+}
+
+.parallax {
+    pointer-events: none;
+
+}
+
+.slogan {
+    position: absolute;
+    z-index: 10;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-family: "Full Sans LC";
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+}
+
+.moon {
+    position: absolute;
+    width: 198px;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11
+}
+
+.light {
+    position: absolute;
+    width: 1920px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    pointer-events: none;
+}
+
+.vignette {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 65%, rgba(0,0,0,0.7))
 }
