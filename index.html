@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload = "sloganTypingEffect(); parallaxEffect()">
     <header>
         <nav id="desktop-nav">
             <div class="logo"><img src="Assets/Images/logo (white).png" alt="Jace Logo" style="width:50px;height:50px;"></div>
@@ -45,21 +45,21 @@
 
     <main>
         <div class="vignette"></div>
-        <img src="Assets/Images/Layer 7.png" class="parallax layer7">
-        <img src="Assets/Images/Layer 6.png" class="parallax layer6">
-        <img src="Assets/Images/Layer 5.png" class="parallax layer5">
-        <img src="Assets/Images/Layer 4.png" class="parallax layer4">
-        <img src="Assets/Images/fog.png" class="parallax fog">
-        <img src="Assets/Images/Layer 3.png" class="parallax layer3">
-        <div class="parallax name">
+        <img src="Assets/Images/Layer 7.png" data-speedX="0.027" data-speedY="0.027" class="parallax layer7">
+        <img src="Assets/Images/Layer 6.png" data-speedX="0.059" data-speedY="0.059" class="parallax layer6">
+        <img src="Assets/Images/Layer 5.png" data-speedX="0.08" data-speedY="0.08" class="parallax layer5">
+        <img src="Assets/Images/Layer 4.png" data-speedX="0.065" data-speedY="0.065" class="parallax layer4">
+        <img src="Assets/Images/fog.png" data-speedX="0.25" data-speedY="0.25" class="parallax fog">
+        <img src="Assets/Images/Layer 3.png" data-speedX="0.1" data-speedY="0.1" class="parallax layer3">
+        <div data-speedX="0.125" data-speedY="0.125" class="parallax name">
             <span>Jace Mu</span>
         </div>
-        <img src="Assets/Images/Layer 2.png" class="parallax layer2">
-        <img src="Assets/Images/Layer 1.png" class="parallax layer1">
-        <div class="slogan">
-            <p>Welcome to my story.</p>
+        <img src="Assets/Images/Layer 2.png" data-speedX="0.15" data-speedY="0.15" class="parallax layer2">
+        <img src="Assets/Images/Layer 1.png" data-speedX="0.22" data-speedY="0.22" class="parallax layer1">
+        <div data-speedX="0.125" data-speedY="0.125" class="parallax slogan">
+            <p id="sloganText"></p>
         </div>
-        <img src="Assets/Images/moon.png" class="parallax moon">
+        <img src="Assets/Images/moon.png" data-speedX="0.027" data-speedY="0.027" class="parallax moon">
         <img src="Assets/Images/light.png" class="light">
     </main>
 

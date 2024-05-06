@@ -23,7 +23,9 @@ header {
 }
 
 header nav {
-    font-family: 'Spectral SC', serif;
+    font-family: 'Full Sans LC', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     justify-content: space-between;
     align-items: center;
     max-width: 1650px;
@@ -131,55 +133,44 @@ main {
 
 .layer7 {
     position: absolute;
-    width: 1920px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1
+    z-index: 1;
 }
 
 .layer6 {
     position: absolute;
-    width: 1920px;
-    top: 55%;
+    top: 70%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 2
 }
 
 .layer5 {
     position: absolute;
-    width: 1920px;
-    top: 60%;
+    top: 70%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 3
 }
 
 .layer4 {
     position: absolute;
-    width: 1920px;
-    top: 65%;
+    top: 70%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 4
 }
 
 .fog {
     position: absolute;
-    width: 1920px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 5
 }
 
 .layer3 {
     position: absolute;
     width: 455px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-15%, -50%);
+    top: 56%;
+    left: 58%;
     z-index: 6
 }
 
@@ -188,7 +179,7 @@ main {
     z-index: 7;
     display: flex;
     width: 100vw;
-    top: 52%;
+    top: 59%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -204,48 +195,44 @@ main {
 
 .layer2 {
     position: absolute;
-    width: 1920px;
-    top: 66%;
+    top: 75%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 8
 }
 
 .layer1 {
     position: absolute;
-    width: 1920px;
-    top: 77%;
+    top:85%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 9
 }
 
 .parallax {
     pointer-events: none;
-
+    transform: translate(-50%, -50%);
 }
 
 .slogan {
     position: absolute;
     z-index: 10;
-    top: 65%;
+    top: 72%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    text-align: left;
+    width: 600px;
     text-transform: uppercase;
     color: white;
     font-family: "Full Sans LC";
     font-size: 2.5rem;
     letter-spacing: 5px;
+    transform: translate(-50%, -50%);
 }
 
 .moon {
     position: absolute;
     width: 198px;
-    top: 18%;
+    top:26%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 11
+    z-index: 1
 }
 
 .light {
@@ -253,9 +240,9 @@ main {
     width: 1920px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 12;
     pointer-events: none;
+    transform: translate(-50%, -50%);
 }
 
 /* Vignette */
