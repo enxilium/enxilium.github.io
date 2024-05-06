@@ -179,7 +179,7 @@ main {
     z-index: 7;
     display: flex;
     width: 100vw;
-    top: 59%;
+    top: 57%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -195,7 +195,7 @@ main {
 
 .layer2 {
     position: absolute;
-    top: 75%;
+    top: 72%;
     left: 50%;
     z-index: 8
 }
@@ -210,12 +210,13 @@ main {
 .parallax {
     pointer-events: none;
     transform: translate(-50%, -50%);
+    transition: 0.45s cubic-bezier(.2, .49, .32, .99);
 }
 
 .slogan {
     position: absolute;
     z-index: 10;
-    top: 72%;
+    top: 70%;
     left: 50%;
     text-align: left;
     width: 600px;
