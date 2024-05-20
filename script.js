@@ -12,8 +12,6 @@ function parallaxEffect() {
             let speedY = el.dataset.speedy;
             el.style.transform = `translateX(calc(-50% + ${-xValue * speedX}px)) 
             translateY(calc(-50% + ${yValue * speedY}px))`;
-            console.log(speedX);
-            console.log(el);
         });
     });
 }
@@ -24,8 +22,9 @@ function toggleMenu() {
 
 var i = 0;
 function sloganTypingEffect() {
+    console.log('function running');
     var txt = 'Welcome to my story.';
-    var speed = 40;
+    var speed = 100;
 
     if (i < txt.length) {
         document.getElementById("sloganText").innerHTML += txt.charAt(i);

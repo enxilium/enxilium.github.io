@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
-<body onload = "sloganTypingEffect(); parallaxEffect()">
+<body onload = "setTimeout(sloganTypingEffect, 3500); parallaxEffect()">
     <header>
         <nav id="desktop-nav">
             <div class="logo"><img src="Assets/Images/logo (white).png" alt="Jace Logo" style="width:50px;height:50px;"></div>
@@ -45,25 +45,24 @@
 
     <main>
         <div class="vignette"></div>
-        <img src="Assets/Images/Layer 7.png" data-speedX="0.027" data-speedY="0.027" class="parallax layer7">
-        <img src="Assets/Images/Layer 6.png" data-speedX="0.059" data-speedY="0.059" class="parallax layer6">
-        <img src="Assets/Images/Layer 5.png" data-speedX="0.08" data-speedY="0.08" class="parallax layer5">
-        <img src="Assets/Images/Layer 4.png" data-speedX="0.065" data-speedY="0.065" class="parallax layer4">
-        <img src="Assets/Images/fog.png" data-speedX="0.25" data-speedY="0.25" class="parallax fog">
-        <img src="Assets/Images/Layer 3.png" data-speedX="0.1" data-speedY="0.1" class="parallax layer3">
-        <div data-speedX="0.125" data-speedY="0.125" class="parallax name">
+        <img src="Assets/Images/Layer 7.png" data-speedX="0.027" data-speedY="0.027" animation-direction="vertical" data-distance="-200" class="parallax layer7">
+        <img src="Assets/Images/Layer 6.png" data-speedX="0.059" data-speedY="0.059" animation-direction="vertical" data-distance="850" class="parallax layer6">
+        <img src="Assets/Images/Layer 5.png" data-speedX="0.08" data-speedY="0.08" animation-direction="horizontal" data-distance="-200" class="parallax layer5">
+        <img src="Assets/Images/Layer 4.png" data-speedX="0.065" data-speedY="0.065" animation-direction="horizontal" data-distance="-200" class="parallax layer4">
+        <img src="Assets/Images/fog.png" data-speedX="0.25" data-speedY="0.25" animation-direction="horizontal" data-distance="-200" class="parallax fog">
+        <img src="Assets/Images/Layer 3.png" data-speedX="0.1" data-speedY="0.1" animation-direction="horizontal" data-distance="-200" class="parallax layer3">
+        <div data-speedX="0.125" data-speedY="0.125" animation-direction="text" data-distance="-200" class="parallax name">
             <span>Jace Mu</span>
         </div>
-        <img src="Assets/Images/Layer 2.png" data-speedX="0.15" data-speedY="0.15" class="parallax layer2">
-        <img src="Assets/Images/Layer 1.png" data-speedX="0.22" data-speedY="0.22" class="parallax layer1">
-        <div data-speedX="0.125" data-speedY="0.125" class="parallax slogan">
+        <img src="Assets/Images/Layer 2.png" data-speedX="0.15" data-speedY="0.15" animation-direction="horizontal" data-distance="-200" class="parallax layer2">
+        <img src="Assets/Images/Layer 1.png" data-speedX="0.22" data-speedY="0.22" animation-direction="horizontal" data-distance="-200" class="parallax layer1">
+        <div data-speedX="0.125" data-speedY="0.125" animation-direction="text" data-distance="-200" class="parallax slogan">
             <p id="sloganText"></p>
         </div>
-        <img src="Assets/Images/moon.png" data-speedX="0.027" data-speedY="0.027" class="parallax moon">
+        <img src="Assets/Images/moon.png" data-speedX="0.027" data-speedY="0.027" animation-direction="vertical" data-distance="-100" class="parallax moon">
         <img src="Assets/Images/light.png" class="light">
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="script.js"></script>
-    
 </body>
 </html>
