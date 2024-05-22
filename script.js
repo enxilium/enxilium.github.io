@@ -22,7 +22,6 @@ function toggleMenu() {
 
 var i = 0;
 function sloganTypingEffect() {
-    console.log('function running');
     var txt = 'Welcome to my story.';
     var speed = 100;
 
