@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ======================= Transitions/Animations ======================= */
+
+@keyframes layer6FadeUp {
+  from {
+      top: 90%;
+      opacity: 0%;
+  }
+  to {
+      top: 70%;
+      opacity: 100%;
+  }
+}
+
+@keyframes fadeDown {
+  from {
+      top: 20%;
+      opacity: 0%;
+  }
+  to {
+      top: 26%;
+      opacity: 100%;
+  }
+}
+
+@keyframes panDown {
+  from {
+      top: 60%;
+  }
+  to {
+      top: 50%;
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+      left: 100%;
+      opacity: 0%;
+  }
+  to {
+      left: 50%;
+      opacity: 100%;
+  }
+}
+
+@keyframes fadeRight {
+  from {
+      left: 0%;
+      opacity: 0%;
+  }
+  to {
+      left: 50%;
+      opacity: 100%;
+  }
+}
+
+@keyframes layer3FadeUp {
+  from {
+      top: 90%;
+  }
+  to {
+      top: 56%;
+  }
+}
+
+@keyframes layer2FadeUp {
+  from {
+      top: 90%;
+  }
+  to {
+      top: 72%;
+  }
+}
+
+@keyframes layer1FadeUp {
+  from {
+      top: 90%;
+  }
+  to {
+      top: 85%;
+  }
+}
+
+@keyframes textFadeIn {
+  from {
+      top: 50%;
+      opacity: 0%;
+  }
+  to {
+      top: 57%;
+      opacity: 100%;
+  }
+}
+
+/* ======================= Components ======================= */
+
+.layer7 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    animation: panDown 1s;
+}
+
+.layer6 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    z-index: 2;
+    animation: layer6FadeUp 2s;
+}
+
+.layer5 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    z-index: 3;
+    animation: fadeLeft 3.5s;
+}
+
+.layer4 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    z-index: 4;
+    animation: fadeRight 3.5s;
+}
+
+.fog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5
+}
+
+.layer3 {
+    position: absolute;
+    width: 455px;
+    top: 90%;
+    left: 58%;
+    z-index: 6;
+    animation: layer3FadeUp 2.5s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.name {
+    position: absolute;
+    z-index: 7;
+    display: flex;
+    width: 100vw;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Full Sans LC";
+    font-size: 10.5rem;
+    letter-spacing: 35px;
+    pointer-events: auto !important;
+    animation: textFadeIn 2s;
+}
+
+.layer2 {
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    z-index: 8;
+    animation: layer2FadeUp 2s;
+}
+
+.layer1 {
+    position: absolute;
+    top:85%;
+    left: 50%;
+    z-index: 9;
+    animation: layer1FadeUp 1s;
+    overflow-y: visible;
+}
+
+.parallax {
+    pointer-events: none;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    transition: 0.45s cubic-bezier(.2, .49, .32, .99);
+}
+
+.slogan {
+    position: absolute;
+    z-index: 10;
+    top: 70%;
+    left: 50%;
+    text-align: left;
+    width: 600px;
+    text-transform: uppercase;
+    color: white;
+    font-family: "Full Sans LC";
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    transform: translate(-50%, -50%);
+}
+
+.moon {
+    position: absolute;
+    width: 198px;
+    top:26%;
+    left: 50%;
+    z-index: 1;
+    animation: fadeDown 1s;
+}
+
+.light {
+    position: absolute;
+    width: 1920px;
+    top: 48%;
+    left: 50%;
+    z-index: 12;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 1s;
+}
+
+/* Vignette */
+.vignette {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 65%, rgba(0,0,0,0.7))
+}
+
+.introduction {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 75%;
+    background: rgb(2,4,3);
+    background: linear-gradient(180deg, rgba(2,4,3,1) 0%, rgba(0,0,0,1) 100%);
+    z-index: 11;
+}
+
+.introductionText {
+    font-family: 'Full Sans LC', serif;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: xx-large;
+}
+
