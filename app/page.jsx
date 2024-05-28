@@ -35,17 +35,17 @@ const Home = () => {
       <>
         <main>
           <div className="vignette" />
-            <Image
-              src="/Images/Layer 7.png"
-              data-speedx="0.027"
-              data-speedy="0.027"
-              animation-direction="vertical"
-              data-distance={-200}
-              className="parallax layer7"
-              alt="bg"
-              width={2560}
-              height={1920}
-            />
+          <Image
+            src="/Images/Layer 7.png"
+            data-speedx="0.027"
+            data-speedy="0.027"
+            animation-direction="vertical"
+            data-distance={-200}
+            className="parallax layer7"
+            alt="bg"
+            width={2560}
+            height={1920}
+          />
           <Image
             src="/Images/Layer 6.png"
             data-speedx="0.059"
@@ -111,7 +111,7 @@ const Home = () => {
           >
             <span>Jace Mu</span>
           </div>
-          <img
+          <Image
             src="/Images/Layer 2.png"
             data-speedx="0.15"
             data-speedy="0.15"
