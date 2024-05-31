@@ -29,6 +29,7 @@ const Home = () => {
 
   }, []);
 
+
   return (
     <div>
       {
@@ -56,7 +57,7 @@ const Home = () => {
             width={2560}
             height={844}
             alt = "layer"
-            unoptimized
+            layout="fixed"
           />
           <Image
             src="/Images/Layer 5.png"
