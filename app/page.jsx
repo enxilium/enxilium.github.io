@@ -246,7 +246,7 @@ const Home = () => {
                     </div>
                   </div>
                   {/* Image */}
-                  <div className="mb-8 xl:mb-0 w-[25vw] aspect-square">
+                  <div className="flex justify-center items-center mb-8 xl:mb-0">
                     <MainCarousel />
                   </div>
                 </div>

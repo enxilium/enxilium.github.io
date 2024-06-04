@@ -17,17 +17,17 @@ const MainCarousel = () => {
   )
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center w-[40vw] xl:w-[25vw] xl:mr-32">
       <Carousel plugins={[plugin.current]}
-      className="w-[100%]"
       onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}>
+      onMouseLeave={plugin.current.reset}
+      className="w-full">
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>
-              <div className="p-1 w-[200%] aspect-square object-fill">
+              <div className="p-1">
                 <Card>
-                  <CardContent className="flex aspect-square w-50 items-center justify-center p-6 ">
+                  <CardContent className="flex aspect-square items-center justify-center p-6">
                     <span className="text-4xl font-semibold">{index + 1}</span>
                   </CardContent>
                 </Card>
