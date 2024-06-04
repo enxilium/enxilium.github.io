@@ -1,23 +1,34 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client"
 
 import Image from 'next/image';
 import '@styles/home.css';
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import React from 'react';
+
+/* Components */
+import { Button } from '@/components/ui/button'
+import { FiDownload } from "react-icons/fi";
+import Social from '@/components/Socials'
+import MainCarousel from '@/components/MainCarousel'
+import { TypeAnimation } from 'react-type-animation';
 
 const Home = () => {
 
+  const [color, setColor] = useState("#66b088");
+
   useEffect(() => {
     const handleMouseMove = (event) => {
-    const xValue = event.clientX - window.innerWidth/2;
-    const yValue = event.clientY - window.innerHeight/2;
+      const xValue = event.clientX - window.innerWidth/2;
+      const yValue = event.clientY - window.innerHeight/2;
 
-    const parallaxElements = document.querySelectorAll('.parallax');
-    parallaxElements.forEach((el) => {
-      let speedX = el.dataset.speedx;
-      let speedY = el.dataset.speedy;
-      el.style.transform = `translateX(calc(-50% + ${-xValue * speedX}px)) 
-      translateY(calc(-50% + ${yValue * speedY}px))`;
+      const parallaxElements = document.querySelectorAll('.parallax');
+      parallaxElements.forEach((el) => {
+        let speedX = el.dataset.speedx;
+        let speedY = el.dataset.speedy;
+        el.style.transform = `translateX(calc(-50% + ${-xValue * speedX}px)) 
+        translateY(calc(-50% + ${yValue * speedY}px))`;
       });
     };
 
@@ -29,13 +40,13 @@ const Home = () => {
 
   }, []);
 
-
   return (
     <div>
       {
-      <>
-        <main>
+        <>
           <div className="vignette" />
+          <span className="shootingStar"></span>
+          <span className="shootingStar"></span>
           <Image
             src="/Images/Layer 7.png"
             data-speedx="0.027"
@@ -57,7 +68,6 @@ const Home = () => {
             width={2560}
             height={844}
             alt = "layer"
-            layout="fixed"
           />
           <Image
             src="/Images/Layer 5.png"
@@ -66,7 +76,7 @@ const Home = () => {
             animation-direction="horizontal"
             data-distance={-200}
             className="parallax layer5"
-            width={2560}
+            width={3389}
             height={716}
             alt = "layer"
           />
@@ -77,7 +87,7 @@ const Home = () => {
             animation-direction="horizontal"
             data-distance={-200}
             className="parallax layer4"
-            width={2560}
+            width={3280}
             height={788}
             alt = "layer"
           />
@@ -159,31 +169,90 @@ const Home = () => {
             height={1308}
             alt = "layer"
           />
-          <section className="introduction">
-            <div className="profile-pic">
-              ! insert image here
+          <Image src="/Images/scrollArrow.png" className="scrollArrow" 
+            width={2560}
+            height={1308}
+            alt = "layer"
+          />
+
+          {/* Content */}
+
+          <div className="absolute h-[200vh] w-screen">
+            <div className="absolute h-screen w-screen bottom-0 z-50 bg-black">
+              <div className="container mx-auto mt-[5%] h-full">
+                <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+                  {/* Text */}
+                  <div className="text-center xl:text-left">
+                    <div className="container p-0 text-xl" style={{color: color}}>
+                      <TypeAnimation
+                        sequence={[
+                          "Software Developer",
+                          500,
+                          () => {
+                            setColor("#66b088");
+                          },
+                          "Data Engineer",
+                          900,
+                          () => {
+                            setColor("#66b088");
+                          },
+                          "Creative Author",
+                          400,
+                          () => {
+                            setColor("#66b088");
+                          },
+                          "Music Producer",
+                          500,
+                          () => {
+                            setColor("#66b088");
+                          },
+                        ]}
+                        repeat={Infinity}
+                        speed={{
+                          type: "keyStrokeDelayInMs",
+                          value: 100, //the higher the value the slower the letters
+                        }} //This is the speed of typing in milliseconds
+                        deletionSpeed={50}
+                        wrapper="span"
+                        className="ml-1"
+                      />
+                    </div>
+                    <h1 className="h1">
+                      Hey! I'm <br /> <span className="text-accent"> Jace </span>
+                    </h1>
+                    <p className="max-w-[500px] mb-9 mt-5 text-white/80">
+                      I am an aspiring leader and life-long learner, seeking to pursue my passions while advancing my career and bringing change to the world with my own two hands.
+                    </p>
+                    {/* Button/Social Links */}
+                    <div className="flex flex-col xl:flex-row items-center gap-8">
+                      <Button 
+                        variants="outline" 
+                        size="lg" 
+                        className="uppercase flex items-center gap-2"
+                      >
+                        <span>Resume</span>
+                        <FiDownload className="text-xl"/>
+                      </Button>
+
+                      <div className="mb-8 xl:mb-0">
+                        <Social 
+                          containerStyles="flex gap-6" 
+                          iconStyles="w-9 h-9 border border-accent 
+                          rounded-full flex justify-center items-center 
+                          text-accent text-base hover:bg-accent hover:text-primary 
+                          hover:text-primary hover:transition-all duration-500"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  {/* Image */}
+                  <div className="mb-8 xl:mb-0 w-[25vw] aspect-square">
+                    <MainCarousel />
+                  </div>
+                </div>
+              </div>
             </div>
-            <h1>Jace Mu</h1>
-            <h2>Web Developer</h2>
-            <p className="introduction">
-              I'm a passionate web developer based in Brisbane, Australia. I love
-              using the latest technologies to create beautiful and functional
-              websites. When I'm not coding, I enjoy playing video games, hiking, and
-              cooking.
-            </p>
-            <ul className="skills">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>Gatsby</li>
-              <li>WordPress</li>
-            </ul>
-            <a href="#" className="resume-link">
-              View Resume
-            </a>
-          </section>
-        </main>
+          </div>
       </>      
       }
     </div>

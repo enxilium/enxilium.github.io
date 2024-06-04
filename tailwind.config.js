@@ -11,12 +11,25 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      padding: "15px",
+    },
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
+    fontFamily: {
+      primary: "var(--font-poppins)",
     },
     extend: {
+      colors: {
+        primary: '#121F2F',
+        accent: {
+          DEFAULT: "#66b088",
+        }
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

@@ -1,5 +1,14 @@
 import '@styles/globals.css';
-import Nav from '@components/Nav.jsx';
+import Header from '@components/Header.jsx';
+import { Poppins } from 'next/font/google';
+import PageTransition from '@components/PageTransition';
+import StairTransition from '@components/StairTransition';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+})
 
 export const metadata = {
   title: "Enxilium's Portfolio",
@@ -7,17 +16,15 @@ export const metadata = {
 }
 
 const BaseLayout = ({children}) => {
+  
   return (
     <html lang="en">
-      <body>
-        <div className="main">
-          <div className="gradient" />
-        </div>
-
-        <main className="app">
-          <Nav />
+      <body className={poppins.variable}>
+        <Header/>
+        <StairTransition></StairTransition>
+        <PageTransition>
           {children}
-        </main>
+        </PageTransition>
       </body>
     </html>
   )

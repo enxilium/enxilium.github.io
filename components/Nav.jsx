@@ -1,36 +1,48 @@
-import Image from 'next/image'
+"use client"
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+const links = [
+    {
+        name: "HOME",
+        path: "/",
+    },
+    {
+        name: "ABOUT",
+        path: "/about",
+    },
+    {
+        name: "EXPERIENCE",
+        path: "/experience",
+    },
+    {
+        name: "PROJECTS",
+        path: "/projects",
+    },
+    {
+        name: "CONTACT",
+        path: "/contact",
+    }
+]
 
 const Nav = () => {
+    const pathname = usePathname();
   return (
-    <header>
-      <nav className="desktop-navbar">
-            <div className="navbar-logo">
-                <Image
-                    src="/Images/logo (white).png"
-                    alt="Jace Logo"
-                    width={50}
-                    height={50}
-                />
-            </div>
-            <div>
-                <ul className="nav-links">
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li>
-                        <a href="#Experience">Experience</a>
-                    </li>
-                    <li>
-                        <a href="#Projects">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#Contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <nav className="flex gap-8">
+        {links.map((link, index) => {
+            return (
+                <Link 
+                    href={link.path} 
+                    key={index} 
+                    className={`${link.path === pathname && "text-accent border-b-2 border-accent"}
+                    capitalize text-2xl font-large hover:text-accent transition-all`}
+                    >
+                    {link.name}
+                </Link>
+            );
+        })}
+    </nav>
   )
 }
 
