@@ -69,7 +69,7 @@ const MainCarousel = () => {
   ]
 
   return (
-    <div className="w-[40vw] xl:w-[25vw] xl:mr-32 align-middle">
+    <div className="w-[80%] xl:w-[40%] align-middle">
       <div className="flex items-center justify-center w-full">
         <h1 className="hidden xl:block h2 mt-8 text-3xl">HIGHLIGHTS</h1>
       </div>

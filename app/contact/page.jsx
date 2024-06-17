@@ -41,7 +41,7 @@ const Contact = () => {
                     ease: 'easeIn'
                 }
             }}
-            className="py-6"
+            className="py-6 mx-4"
             >
                 <div className="container mx-auto">
                     <div className="flex flex-col xl:flex-row gap-[30px]">

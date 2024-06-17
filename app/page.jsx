@@ -119,7 +119,7 @@ const Home = () => {
             data-speedy="0.125"
             animation-direction="text"
             data-distance={-200}
-            className="parallax name"
+            className="parallax name text-[6.5rem] lg:text-[10.5rem]"
           >
             <span>Jace Mu</span>
           </div>
@@ -150,7 +150,7 @@ const Home = () => {
             data-speedy="0.125"
             animation-direction="text"
             data-distance={-200}
-            className="parallax slogan"
+            className="parallax slogan text-[1.5rem] lg:text-[2.5rem] item-center justify-center flex"
           >
             <p id="sloganText">Welcome to my story.</p>
           </div>
@@ -178,11 +178,11 @@ const Home = () => {
 
           {/* Content */}
 
-          <div className="absolute h-[200vh] w-screen">
-            <div className="absolute h-screen w-screen bottom-0 z-50 bg-black">
-              <section className="h-full">
+          <div className="absolute h-[200vh] xl:h-full w-screen">
+            <div className="absolute h-[60vh] top-[50%] xl:top-[100%] w-screen bottom-0 z-50 bg-black">
+              <section className="h-[80%]">
                 <div className="container mx-auto mt-[5%] h-full">
-                  <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+                  <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 mx-10">
                     {/* Text */}
                     <div className="text-center xl:text-left">
                       <div className="container p-0 text-xl" style={{color: color}}>
@@ -248,10 +248,9 @@ const Home = () => {
                       </div>
                     </div>
                     {/* Image */}
+                    
                     <h1 className="h2 xl:hidden">HIGHLIGHTS</h1>
-                    <div className="flex justify-center items-center mb-8 xl:mb-0">
-                      <MainCarousel />
-                    </div>
+                    <MainCarousel />
                   </div>
                   <Stats/>
                 </div>
