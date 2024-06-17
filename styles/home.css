@@ -336,3 +336,8 @@
     animation-duration: 3s;
 }
 
+.stats {
+    position: relative;
+    top: -50px; /* Adjust this value as needed */
+    z-index: 1; /* Ensure it appears on top of the section above */
+  }

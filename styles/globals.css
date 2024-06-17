@@ -24,7 +24,17 @@
   .h3 {
     @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
   }
+
+  .text-outline {
+    -webkit-text-stroke: 1px #ffffff;  
+  }
+  
+  .text-outline-hover {
+    -webkit-text-stroke: 1px #66b088;
+  }
 }
+
+
 
 *, *::before, *::after {
     margin: 0;

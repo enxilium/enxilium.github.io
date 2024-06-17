@@ -28,7 +28,8 @@ module.exports = {
         primary: '#121F2F',
         accent: {
           DEFAULT: "#66b088",
-        }
+        },
+        faded: "#727272",
       },
       keyframes: {
         "accordion-down": {

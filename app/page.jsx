@@ -13,6 +13,7 @@ import { FiDownload } from "react-icons/fi";
 import Social from '@/components/Socials'
 import MainCarousel from '@/components/MainCarousel'
 import { TypeAnimation } from 'react-type-animation';
+import Stats from '@/components/Stats'
 
 const Home = () => {
 
@@ -179,78 +180,82 @@ const Home = () => {
 
           <div className="absolute h-[200vh] w-screen">
             <div className="absolute h-screen w-screen bottom-0 z-50 bg-black">
-              <div className="container mx-auto mt-[5%] h-full">
-                <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-                  {/* Text */}
-                  <div className="text-center xl:text-left">
-                    <div className="container p-0 text-xl" style={{color: color}}>
-                      <TypeAnimation
-                        sequence={[
-                          "Software Developer",
-                          500,
-                          () => {
-                            setColor("#66b088");
-                          },
-                          "Data Engineer",
-                          900,
-                          () => {
-                            setColor("#66b088");
-                          },
-                          "Creative Author",
-                          400,
-                          () => {
-                            setColor("#66b088");
-                          },
-                          "Music Producer",
-                          500,
-                          () => {
-                            setColor("#66b088");
-                          },
-                        ]}
-                        repeat={Infinity}
-                        speed={{
-                          type: "keyStrokeDelayInMs",
-                          value: 100, //the higher the value the slower the letters
-                        }} //This is the speed of typing in milliseconds
-                        deletionSpeed={50}
-                        wrapper="span"
-                        className="ml-1"
-                      />
-                    </div>
-                    <h1 className="h1">
-                      Hey! I'm <br /> <span className="text-accent"> Jace </span>
-                    </h1>
-                    <p className="max-w-[500px] mb-9 mt-5 text-white/80">
-                      I am an aspiring leader and life-long learner, seeking to pursue my passions while advancing my career and bringing change to the world with my own two hands.
-                    </p>
-                    {/* Button/Social Links */}
-                    <div className="flex flex-col xl:flex-row items-center gap-8">
-                      <Button 
-                        variants="outline" 
-                        size="lg" 
-                        className="uppercase flex items-center gap-2"
-                      >
-                        <span>Resume</span>
-                        <FiDownload className="text-xl"/>
-                      </Button>
-
-                      <div className="mb-8 xl:mb-0">
-                        <Social 
-                          containerStyles="flex gap-6" 
-                          iconStyles="w-9 h-9 border border-accent 
-                          rounded-full flex justify-center items-center 
-                          text-accent text-base hover:bg-accent hover:text-primary 
-                          hover:text-primary hover:transition-all duration-500"
+              <section className="h-full">
+                <div className="container mx-auto mt-[5%] h-full">
+                  <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+                    {/* Text */}
+                    <div className="text-center xl:text-left">
+                      <div className="container p-0 text-xl" style={{color: color}}>
+                        <TypeAnimation
+                          sequence={[
+                            "Software Developer",
+                            500,
+                            () => {
+                              setColor("#66b088");
+                            },
+                            "Data Engineer",
+                            900,
+                            () => {
+                              setColor("#66b088");
+                            },
+                            "Creative Author",
+                            400,
+                            () => {
+                              setColor("#66b088");
+                            },
+                            "Music Producer",
+                            500,
+                            () => {
+                              setColor("#66b088");
+                            },
+                          ]}
+                          repeat={Infinity}
+                          speed={{
+                            type: "keyStrokeDelayInMs",
+                            value: 100, //the higher the value the slower the letters
+                          }} //This is the speed of typing in milliseconds
+                          deletionSpeed={50}
+                          wrapper="span"
+                          className="ml-1"
                         />
                       </div>
+                      <h1 className="h1">
+                        Hey! I'm <br /> <span className="text-accent"> Jace </span>
+                      </h1>
+                      <p className="max-w-[500px] mb-9 mt-5 text-white/80">
+                        As an aspiring leader and life-long learner, I seek to pursue my passions while advancing my career and bringing change to the world with my own two hands.
+                      </p>
+                      {/* Button/Social Links */}
+                      <div className="flex flex-col xl:flex-row items-center gap-8">
+                        <Button 
+                          variants="outline" 
+                          size="lg" 
+                          className="uppercase flex items-center gap-2"
+                        >
+                          <span>Resume</span>
+                          <FiDownload className="text-xl"/>
+                        </Button>
+
+                        <div className="mb-8 xl:mb-0">
+                          <Social 
+                            containerStyles="flex gap-6" 
+                            iconStyles="w-9 h-9 border border-accent 
+                            rounded-full flex justify-center items-center 
+                            text-accent text-base hover:bg-accent hover:text-primary 
+                            hover:text-primary hover:transition-all duration-500"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    {/* Image */}
+                    <h1 className="h2 xl:hidden">HIGHLIGHTS</h1>
+                    <div className="flex justify-center items-center mb-8 xl:mb-0">
+                      <MainCarousel />
                     </div>
                   </div>
-                  {/* Image */}
-                  <div className="flex justify-center items-center mb-8 xl:mb-0">
-                    <MainCarousel />
-                  </div>
+                  <Stats/>
                 </div>
-              </div>
+              </section>
             </div>
           </div>
       </>      
