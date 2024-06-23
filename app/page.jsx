@@ -2,6 +2,7 @@
 "use client"
 
 import Image from 'next/image';
+import Link from 'next/link';
 import '@styles/home.css';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -227,13 +228,22 @@ const Home = () => {
                       </p>
                       {/* Button/Social Links */}
                       <div className="flex flex-col xl:flex-row items-center gap-8">
-                        <Button 
+                        <Button asChild 
                           variants="outline" 
                           size="lg" 
                           className="uppercase flex items-center gap-2"
+                          download=""
                         >
-                          <span>Resume</span>
-                          <FiDownload className="text-xl"/>
+                          <Link 
+                            href="/resume.pdf" 
+                            download="resume"
+                            alt="alt text"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <span>Resume</span>
+                            <FiDownload className="text-xl"/>
+                          </Link>
                         </Button>
 
                         <div className="mb-8 xl:mb-0">
