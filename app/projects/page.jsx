@@ -21,33 +21,33 @@ const CSprojects = [
         category: "Full-stack",
         title: "Internflow",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "A free-to-use online platform helping youth unlock their potential from a diverse catalog of internships, scholarships, and other opportunities.",
         stack: [{ name: "MongoDB"}, { name: "Express.js"}, { name: "React.js"}, { name: "Node.js"}],
         image: '/Images/internflow.png',
-        live: '',
-        github: ''
+        live: 'https://internflow.org',
+        github: 'https://github.com/enxilium/internflow'
     },
     {
         num: '02',
         category: "Web development",
-        title: "Placeholder",
+        title: "Portfolio website",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        stack: [{ name: "Vue.js"}],
-        image: '/Images/internflow.png',
-        live: '',
-        github: ''
+            "A personal website designed and developed by myself, intended to host my projects and passions as well as showcase my skills and experience.",
+        stack: [{ name: "Next.js"}, { name: "Tailwind CSS"}, { name: "Framer Motion"}, { name: "Vercel"}],
+        image: '/Images/portfolioSnapshot.png',
+        live: 'https://jacemu.vercel.app',
+        github: 'https://github.com/enxilium/enxilium.github.io'
     },
     {
         num: '03',
-        category: "Web development",
-        title: "Placeholder",
+        category: "Machine Learning",
+        title: "Graduate Admissions Predictor",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        stack: [{ name: "Vue.js"}],
+            "A multiple linear regression model trained using Tensorflow, with the purpose of predicting graduate program admission chances.",
+        stack: [{ name: "Tensorflow"}, { name: "Python"}, { name: "matplotlib"}, { name: "scipy"}],
         image: '/Images/internflow.png',
-        live: '',
-        github: ''
+        live: 'https://github.com/enxilium/GraduateAdmissions',
+        github: 'https://github.com/enxilium/GraduateAdmissions'
     },
 ];
 

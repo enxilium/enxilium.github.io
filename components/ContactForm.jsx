@@ -5,7 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@components/ui/textarea";
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm("YOUR_FORM_ID");
+  // const [state, handleSubmit] = useForm("xldrrnvw");
+  const [formState, submit] = useForm(process.env.NEXT_PUBLIC_CONTACT_FORM);
 
   if (state.succeeded) {
     return <p>Thank you for your message! I will get back to you shortly.</p>;
@@ -15,7 +16,7 @@ export default function ContactForm() {
     <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl" onSubmit={handleSubmit}>
         <h3 className="text-4xl text-accent">Contact Me</h3>
         <p className="text-white/60">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Hey there! If there's anything you need to contact me about, please fill out the form below and I will get back to you as soon as possible. Looking forward to hearing from you!
         </p>
         {/* form inputs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
