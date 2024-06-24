@@ -11,7 +11,7 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: "Enxilium's Portfolio",
+  title: "Jace Mu | Portfolio",
   description: "A personal website created with Next.js and Tailwind CSS"
 }
 
