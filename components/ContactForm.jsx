@@ -6,7 +6,7 @@ import { Textarea } from "@components/ui/textarea";
 
 export default function ContactForm() {
   // const [state, handleSubmit] = useForm("xldrrnvw");
-  const [formState, submit] = useForm(process.env.NEXT_PUBLIC_CONTACT_FORM);
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_CONTACT_FORM);
 
   if (state.succeeded) {
     return <p>Thank you for your message! I will get back to you shortly.</p>;
