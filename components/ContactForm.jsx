@@ -20,9 +20,9 @@ export default function ContactForm() {
         </p>
         {/* form inputs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Input type="firstname" placeholder="Firstname" id="firstname" name="firstname"/> 
+            <Input type="firstname" placeholder="First name" id="firstname" name="firstname"/> 
 
-            <Input type="lastname" placeholder="Lastname" id="lastname" name="lastname"/>
+            <Input type="lastname" placeholder="Last name" id="lastname" name="lastname"/>
 
             <Input type="email" placeholder="Email address" id="email" name="email"/>
             <ValidationError prefix="Email" field="email" errors={state.errors} />
