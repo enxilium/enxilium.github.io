@@ -26,7 +26,7 @@ const info = [
 const Contact = () => {
     
     return (
-        <div className="mt-[154px]">
+        <div className="mt-[114px] xl:mt-[146px]">
             <motion.section initial={{opacity: 0}}
             animate={{
                 opacity: 1,

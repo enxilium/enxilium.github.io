@@ -45,7 +45,7 @@ const CSprojects = [
         description:
             "A multiple linear regression model trained using Tensorflow, with the purpose of predicting graduate program admission chances.",
         stack: [{ name: "Tensorflow"}, { name: "Python"}, { name: "matplotlib"}, { name: "scipy"}],
-        image: '/Images/internflow.png',
+        image: '/Images/GraduateAdmissionStatisticsSnapshot.png',
         live: 'https://github.com/enxilium/GraduateAdmissions',
         github: 'https://github.com/enxilium/GraduateAdmissions'
     },
@@ -61,7 +61,7 @@ const Projects = () => {
     }
 
     return ( 
-        <div className="mt-[114px]">
+        <div className="mt-[114px] xl:mt-[146px]">
             <motion.section 
                 initial={{opacity: 0}}
                 animate={{opacity: 1, transition: {delay: 2.4, duration: 0.4, ease: 'easeIn'}
@@ -79,7 +79,7 @@ const Projects = () => {
                                 </div>
                                 {/* outline */}
                                 <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                                    {CSproject.category}
+                                    {CSproject.title}
                                 </h2>
                                 {/* description */}
                                 <p className="text-white/60">{CSproject.description}</p>
@@ -128,7 +128,7 @@ const Projects = () => {
                             <Swiper 
                                 spaceBetween={30} 
                                 slidesPerView={1}
-                                className="xl:h-[520px] mb-12"
+                                className="xl:h-[520px]"
                                 onSlideChange={handleSlideChange}
                             >
                                 {CSprojects.map((project, index) => {

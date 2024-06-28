@@ -114,3 +114,57 @@ header {
 .nav-logo {
   transition: all 300ms ease;
 }
+
+/* Tech Stack Logos */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow:hidden;
+  display: flex;
+  gap: 0;
+}
+
+.logos-slide {
+  animation: slide 5s infinite linear;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.Welcome-box {
+  isolation: isolate;
+  overflow: hidden;
+  align-items: center;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 32px;
+  box-shadow: inset 0 -7px 11px #a48fff1f;
+  position: relative;
+  min-height: min-content;
+  transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
+  width:40%;
+  background: 
+    linear-gradient(90.01deg, #0b1413 0.01%, #15282b 50.01%, #1d334f 100%);
+  opacity: 0%;
+  animation: fadeIn 1s forwards;
+  animation-delay:3s
+}
+
+.Welcome-text {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    linear-gradient(90.01deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%);
+  background-blend-mode: normal, screen;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

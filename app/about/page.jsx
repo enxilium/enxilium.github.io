@@ -1,8 +1,17 @@
 "use client";
 
-import Image from 'next/image'
-import {BsArrowDownRight} from "react-icons/bs"
-import Link from "next/link";
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  slideInFromLeft,
+  slideInFromRight,
+  slideInFromTop,
+} from "@/utils/motion";
+import Image from "next/image";
+
+import { SiNextdotjs, SiTailwindcss, SiPython, SiCsharp, SiTensorflow } from "react-icons/si";
+import Photo from "@components/Photo";
+
 
 const hobbies = [
     {
@@ -35,43 +44,63 @@ const hobbies = [
     },
 ];
 
-import { motion } from "framer-motion";
-
 const About = () => {
     return (
-        <div className="mt-[114px]">
+        <div className="mt-[114px] xl:mt-[146px]">
             <section className="min-h-[80vh] flex flex-col justify-center py-12 mx-4 xl:py-0">
                 <div className="container mx-auto">
-                    <motion.div 
-                        initial={{opacity: 0}} 
-                        animate={{
-                            opacity: 1,
-                            transition: {
-                                delay: 2.4,
-                                duration: 0.4,
-                                ease: "easeIn"
-                            }
-                        }}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
-                    >
-                        {hobbies.map((hobby, index) => {
-                            return <div key={index} className="flex-1 flex flex-col justify-center gap-6 group">
-                                <div className="w-full flex justify-between items-center">
-                                    <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">{hobby.num}</div>
-                                    <Link href={hobby.href} className="w-[70px] h-[70px] rounded-full
-                                    bg-transparent group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45">
-                                        <BsArrowDownRight className="text-white text-3xl group-hover:text-primary"/>
-                                    </Link>
+                    <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 mx-10">
+                        {/* Text */}
+                        <div className="h-full w-content flex flex-col gap-5 justify-center text-start min-w-0 order-2 xl:order-none">
+                            <div className="Welcome-box py-[8px] px-[7px] border border-accent">
+                                <div class="logos">
+                                    <div class="logos-slide">
+                                        <SiNextdotjs size="25" className="inline-block mx-3" />
+                                        <SiTensorflow size="25" className="inline-block mx-3"/>
+                                        <SiCsharp size="25" className="inline-block mx-3"/>
+                                        <SiPython size="25" className="inline-block mx-3"/>
+                                        <SiTailwindcss size="25" className="inline-block mx-3"/>
+                                    </div>
+
+                                    <div class="logos-slide">
+                                        <SiNextdotjs size="25" className="inline-block mx-3"/>
+                                        <SiTensorflow size="25" className="inline-block mx-3"/>
+                                        <SiCsharp size="25" className="inline-block mx-3"/>
+                                        <SiPython size="25" className="inline-block mx-3"/>
+                                        <SiTailwindcss size="25" className="inline-block mx-3"/>
+                                    </div>
                                 </div>
-
-                                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-250">{hobby.title}</h2>
-                                <p className="text-white/60">{hobby.description}</p>
-
-                                <div className="border-b border-white/20 w-full"></div>
-
                             </div>
-                        })}
-                    </motion.div>
+
+                            <motion.div
+                            className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+                            >
+                            <span>
+                                Turning
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#adc3c0] to-[#66b088]">
+                                {" "}
+                                ideas{" "}
+                                </span>
+                                into
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#66b088] to-[#adc3c0]">
+                                {" "}
+                                reality.{" "}
+                                </span>
+                            </span>
+                            </motion.div>
+
+                            <motion.p
+                            className="text-lg text-gray-400 my-5 max-w-[600px]"
+                            >
+                            Whether it be in the form of books or code, I write to bring my visions to life. Fueled by curiosity, I am a versatile and proactive learner, dabbling in fields such as competitive programming, machine learning, and web development.
+                            </motion.p>
+                        </div>
+                        
+                        {/* Image */}
+                        <div className="order-1 xl:order-none mb-8 xl:mb-0">
+                            <Photo/>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

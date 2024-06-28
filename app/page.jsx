@@ -178,9 +178,7 @@ const Home = () => {
           />
 
           {/* Content */}
-
-          <div className="absolute h-[200vh] xl:h-full w-screen">
-            <div className="absolute h-[60vh] top-[50%] xl:top-[100%] w-screen bottom-0 z-50 bg-black">
+            <div className="absolute h-max top-[100%] w-screen bottom-0 z-50 bg-black">
               <section className="h-[80%]">
                 <div className="container mx-auto mt-[5%] h-full">
                   <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 mx-10">
@@ -266,7 +264,6 @@ const Home = () => {
                 </div>
               </section>
             </div>
-          </div>
       </>      
       }
     </div>
