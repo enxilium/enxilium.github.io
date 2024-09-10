@@ -29,14 +29,14 @@ const CSprojects = [
     },
     {
         num: '02',
-        category: "Web development",
-        title: "Portfolio website",
+        category: "Full-stack",
+        title: "Paletteflow",
         description:
-            "A personal website designed and developed by myself, intended to host my projects and passions as well as showcase my skills and experience.",
-        stack: [{ name: "Next.js"}, { name: "Tailwind CSS"}, { name: "Framer Motion"}, { name: "Vercel"}],
-        image: '/Images/portfolioSnapshot.png',
-        live: 'https://jacemu.vercel.app',
-        github: 'https://github.com/enxilium/enxilium.github.io'
+            "A lightweight desktop application that leverages AI to generate colorful palettes for any theme.",
+        stack: [{ name: "C#"}, { name: ".NET"}, { name: "WPF"}],
+        image: '/Images/paletteflowPreview.png',
+        live: 'https://github.com/enxilium/paletteflow/releases/tag/v1.0.0',
+        github: 'https://github.com/enxilium/paletteflow'
     },
     {
         num: '03',

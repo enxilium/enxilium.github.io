@@ -9,29 +9,29 @@ const experiences = [
         num: '01',
         title: 'Software Developer',
         description: 
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        href: ""
+            'A passionate creator and developer, using my skills and experience to make a positive impact on the world, one step at a time.',
+        href: "https://github.com/enxilium"
     },
     {
         num: '02',
-        title: 'ML Enthusiast',
+        title: 'Data Enthusiast',
         description: 
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        href: ""
+            'Data is everywhere, and so are their patterns. Visualizing the connections between each entry is the key to the future (and my free time).',
+        href: "https://www.overleaf.com/read/tbbgjzkzmjvy#f1f1c7"
     },
     {
         num: '03',
         title: 'Music Producer',
         description: 
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        href: ""
+            'In a way, coding and music are similar. They both involve taking small, seemingly mundane parts, and elegantly combining them to create something truly amazing.',
+        href: "https://soundcloud.com/cyclxnemxsic"
     },
     {
         num: '04',
         title: 'Creative Author',
         description: 
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        href: ""
+            'Every word is a story, and my writing is the story of my creativity.',
+        href: "https://www.webnovel.com/book/the-mage-of-primordial-chaos_17047823706408905"
     },
 ];
 
@@ -65,7 +65,7 @@ const Experience = () => {
                             return <div key={index} className="flex-1 flex flex-col justify-center gap-6 group">
                                 <div className="w-full flex justify-between items-center">
                                     <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">{experience.num}</div>
-                                    <Link href={experience.href} className="w-[70px] h-[70px] rounded-full
+                                    <Link href={experience.href} target="_blank" className ="w-[70px] h-[70px] rounded-full
                                     bg-transparent group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45">
                                         <BsArrowDownRight className="text-white text-3xl group-hover:text-primary"/>
                                     </Link>
