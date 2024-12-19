@@ -122,7 +122,7 @@ const Home = () => {
             data-distance={-200}
             className="parallax name text-[6.5rem] lg:text-[10.5rem]"
           >
-            <span>Jace Mu</span>
+            <span class="select-none">Jace Mu</span>
           </div>
           <Image
             src="/Images/Layer 2.png"
@@ -187,17 +187,17 @@ const Home = () => {
                       <div className="container p-0 text-xl" style={{color: color}}>
                         <TypeAnimation
                           sequence={[
-                            "Software Developer",
+                            "Software Engineer",
                             500,
                             () => {
                               setColor("#66b088");
                             },
-                            "Data Engineer",
+                            "Data Scientist",
                             900,
                             () => {
                               setColor("#66b088");
                             },
-                            "Creative Author",
+                            "Creative Writer",
                             400,
                             () => {
                               setColor("#66b088");
@@ -222,7 +222,8 @@ const Home = () => {
                         Hey! I'm <br /> <span className="text-accent"> Jace </span>
                       </h1>
                       <p className="max-w-[500px] mb-9 mt-5 text-white/80">
-                        As an aspiring leader and life-long learner, I seek to pursue my passions while advancing my career and bringing change to the world with my own two hands.
+                        As an aspiring leader and project-based learner, I seek to pursue my passions while advancing 
+                        my career and leading positive change in the world with my own two hands.
                       </p>
                       {/* Button/Social Links */}
                       <div className="flex flex-col xl:flex-row items-center gap-8">

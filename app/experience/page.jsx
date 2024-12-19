@@ -24,14 +24,14 @@ const experiences = [
         title: 'Music Producer',
         description: 
             'In a way, coding and music are similar. They both involve taking small, seemingly mundane parts, and elegantly combining them to create something truly amazing.',
-        href: "https://soundcloud.com/cyclxnemxsic"
+        href: "a"
     },
     {
         num: '04',
         title: 'Creative Author',
         description: 
             'Every word is a story, and my writing is the story of my creativity.',
-        href: "https://www.webnovel.com/book/the-mage-of-primordial-chaos_17047823706408905"
+        href: "a"
     },
 ];
 
