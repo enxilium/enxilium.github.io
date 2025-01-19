@@ -122,7 +122,7 @@ const Home = () => {
             data-distance={-200}
             className="parallax name text-[6.5rem] lg:text-[10.5rem]"
           >
-            <span class="select-none">Jace Mu</span>
+            <span className="select-none">Jace Mu</span>
           </div>
           <Image
             src="/Images/Layer 2.png"

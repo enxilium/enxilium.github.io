@@ -74,8 +74,8 @@ const MainCarousel = () => {
       onMouseLeave={plugin.current.reset}
       className="w-full mt-4">
         <CarouselContent>
-            {projects.map((project) => (
-                <CarouselItem>
+            {projects.map((project, index) => (
+                <CarouselItem key={index}>
                   <div className="p-1">
                     <Card className="bg-black text-white border-faded border-opacity-0">
                       <CardHeader>
@@ -97,6 +97,7 @@ const MainCarousel = () => {
                         <div className="relative flex justify-center items-center h-72 overflow-hidden">
                           <Image
                             src={project.imageURL}
+                            alt="thumbnail"
                             width={1080}
                             height={1920}
                             className="rounded-md hover:brightness-[.3] transition-all object-fill"

@@ -53,8 +53,8 @@ const About = () => {
                         {/* Text */}
                         <div className="h-full w-content flex flex-col gap-5 justify-center text-start min-w-0 order-2 xl:order-none">
                             <div className="Welcome-box py-[8px] px-[7px] border border-accent">
-                                <div class="logos">
-                                    <div class="logos-slide">
+                                <div className="logos">
+                                    <div className="logos-slide">
                                         <SiNextdotjs size="25" className="inline-block mx-3" />
                                         <SiTensorflow size="25" className="inline-block mx-3"/>
                                         <SiCsharp size="25" className="inline-block mx-3"/>
@@ -62,7 +62,7 @@ const About = () => {
                                         <SiTailwindcss size="25" className="inline-block mx-3"/>
                                     </div>
 
-                                    <div class="logos-slide">
+                                    <div className="logos-slide">
                                         <SiNextdotjs size="25" className="inline-block mx-3"/>
                                         <SiTensorflow size="25" className="inline-block mx-3"/>
                                         <SiCsharp size="25" className="inline-block mx-3"/>
