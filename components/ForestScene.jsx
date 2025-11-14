@@ -3,7 +3,7 @@
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
-import { PerspectiveCamera, Sparkles, useGLTF } from "@react-three/drei";
+import { AdaptiveDpr, PerspectiveCamera, Sparkles, useGLTF } from "@react-three/drei";
 import Link from "next/link";
 import Socials from "@/components/Socials";
 import {
@@ -73,10 +73,10 @@ const DEFAULT_MOON_ORBIT = {
 };
 
 const CELESTIAL_ORBIT_DEPTH = HORIZON_Z + 44;
-const MAX_SNOW_PARTICLES = 1200;
-const MAX_RAIN_PARTICLES = 1400;
-const MAX_PETAL_PARTICLES = 900;
-const MAX_LEAF_PARTICLES = 900;
+const MAX_SNOW_PARTICLES = 680;
+const MAX_RAIN_PARTICLES = 920;
+const MAX_PETAL_PARTICLES = 640;
+const MAX_LEAF_PARTICLES = 660;
 const SHOOTING_STAR_POOL = 24;
 const MIN_SEASONAL_INTENSITY = {
   petals: 0.35,
@@ -1112,7 +1112,7 @@ const Ground = ({ shadowsEnabled, color }) => (
 );
 
 const Road = ({ shadowsEnabled }) => {
-  const { scene: loadedScene } = useGLTF(`${MODEL_BASE_PATH}${ROAD_MODEL_FILE}`);
+  const { scene: loadedScene } = useGLTF(`${MODEL_BASE_PATH}${ROAD_MODEL_FILE}`, true, true);
   const roadData = useMemo(() => {
     if (!loadedScene) return null;
 
@@ -1162,7 +1162,7 @@ const Road = ({ shadowsEnabled }) => {
     </group>
   );
 };
-useGLTF.preload(`${MODEL_BASE_PATH}${ROAD_MODEL_FILE}`);
+useGLTF.preload(`${MODEL_BASE_PATH}${ROAD_MODEL_FILE}`, true, true);
 
 const Fireflies = ({ count, palette }) => {
   const fireflyPalette = useMemo(
@@ -2994,6 +2994,7 @@ const ForestScene = () => {
           near={0.1}
           far={1800}
         />
+        <AdaptiveDpr pixelated />
         <Suspense fallback={null}>
           <ThreeForest
             qualityConfig={qualityConfig}
