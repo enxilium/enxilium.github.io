@@ -44,6 +44,8 @@ const overlayVariants = {
   exit: { opacity: 0 },
 };
 
+const RESUME_LINK = "/JaceMu_Resume7.pdf";
+
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: (index) => ({ opacity: 1, y: 0, transition: { delay: 0.1 + index * 0.08, type: "spring", stiffness: 120, damping: 18 } }),
@@ -70,7 +72,7 @@ const QualityGate = () => {
   const showSelector = loadingComplete && !qualitySetting;
 
   const loadingMessage = useMemo(() => {
-    if (!assetsLoaded) return "Preparing assets";
+    if (!assetsLoaded) return "Preparing 3D assets";
     if (!qualitySetting) return "Warming up lighting and effects";
     if (!forestReady) return "Please wait...";
     return "Finalizing";
@@ -101,6 +103,22 @@ const QualityGate = () => {
                 <div className="text-center">
                   <p className="text-sm uppercase tracking-[0.5em] text-emerald-200/70">Loading</p>
                   <p className="mt-3 text-xl text-white">{loadingMessage}</p>
+                </div>
+                <p className="max-w-xl text-center text-sm text-white/70">
+                  Rendering a full 3D forest can take a moment, especially on integrated graphics. Hang tight while the site optimizes for your device. In the meantime, feel free to check out my links below!
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-semibold text-emerald-200/80">
+                  <a href="https://github.com/enxilium" target="_blank" rel="noreferrer" className="transition hover:text-emerald-100">
+                    GitHub
+                  </a>
+                  <span className="text-white/40">·</span>
+                  <a href="https://www.linkedin.com/in/jace-mu/" target="_blank" rel="noreferrer" className="transition hover:text-emerald-100">
+                    LinkedIn
+                  </a>
+                  <span className="text-white/40">·</span>
+                  <a href={RESUME_LINK} target="_blank" rel="noreferrer" className="transition hover:text-emerald-100">
+                    Resume
+                  </a>
                 </div>
               </motion.div>
             )}
