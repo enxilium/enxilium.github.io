@@ -9,19 +9,20 @@ const QUALITY_OPTIONS = [
   {
     id: "low",
     title: "Low",
-    subtitle: "Best for integrated graphics and battery saver modes",
+    subtitle: "Best for integrated graphics and most modern laptops",
     highlights: [
       "Lower tree density",
       "Shadows disabled",
       "Minimal atmospheric effects",
     ],
+    recommended: true,
   },
   {
     id: "medium",
     title: "Medium",
-    subtitle: "Balanced visuals for most modern laptops",
+    subtitle: "Balanced visuals for dedicated GPUs",
     highlights: [
-      "Moderate tree density",
+      "Dynamic camera movements",
       "Soft dynamic lighting",
       "Selective particles",
     ],
@@ -29,7 +30,7 @@ const QUALITY_OPTIONS = [
   {
     id: "high",
     title: "High",
-    subtitle: "Full fidelity for dedicated GPUs",
+    subtitle: "Full fidelity for high-end systems",
     highlights: [
       "Maximum tree density",
       "Dynamic shadows and fireflies",
@@ -134,7 +135,7 @@ const QualityGate = () => {
                 <div className="text-center">
                   <p className="text-xs uppercase tracking-[0.45em] text-emerald-200/70">Choose your experience</p>
                   <h2 className="mt-3 text-3xl font-semibold text-white">Select a quality preset</h2>
-                  <p className="mt-2 text-sm text-white/60">You can revisit this choice later from the forest HUD.</p>
+                  <p className="mt-2 text-sm text-white/60">You can revisit this choice later via the top right corner.</p>
                 </div>
 
                 <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -154,7 +155,14 @@ const QualityGate = () => {
                       onClick={() => setQualitySetting(option.id)}
                     >
                       <div>
-                        <p className="text-xs uppercase tracking-[0.45em] text-emerald-200/75">{option.title}</p>
+                        <div className="flex items-start justify-between gap-3">
+                          <p className="text-xs uppercase tracking-[0.45em] text-emerald-200/75">{option.title}</p>
+                          {option.recommended && (
+                            <span className="rounded-full border border-emerald-200/30 bg-emerald-200/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-emerald-100">
+                              Recommended
+                            </span>
+                          )}
+                        </div>
                         <h3 className="mt-3 text-2xl font-semibold text-white">{option.subtitle}</h3>
                       </div>
                       <ul className="flex flex-1 list-disc flex-col gap-2 pl-4 text-sm text-white/70">

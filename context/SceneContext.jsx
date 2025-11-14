@@ -20,7 +20,7 @@ export const SceneProvider = ({ children }) => {
   const programmaticScrollRef = useRef(false);
   const distanceRef = useRef(0);
   const [distance, setDistance] = useState(0);
-  const [qualitySetting, setQualitySettingState] = useState(null);
+  const [qualitySetting, setQualitySettingState] = useState("low");
   const [assetsLoaded, setAssetsLoaded] = useState(false);
   const [forestReady, setForestReady] = useState(false);
   const [restoredFromReturn, setRestoredFromReturn] = useState(false);
@@ -90,6 +90,8 @@ export const SceneProvider = ({ children }) => {
     const stored = window.localStorage.getItem(QUALITY_STORAGE_KEY);
     if (stored === "low" || stored === "medium" || stored === "high") {
       setQualitySettingState(stored);
+    } else {
+      window.localStorage.setItem(QUALITY_STORAGE_KEY, "low");
     }
 
     return undefined;
