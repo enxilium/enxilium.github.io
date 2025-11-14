@@ -73,9 +73,9 @@ const MainCarousel = () => {
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
       className="w-full mt-4">
-        <CarouselContent>
-            {projects.map((project) => (
-                <CarouselItem>
+    <CarouselContent>
+      {projects.map((project) => (
+        <CarouselItem key={project.title}>
                   <div className="p-1">
                     <Card className="bg-black text-white border-faded border-opacity-0">
                       <CardHeader>
@@ -100,6 +100,7 @@ const MainCarousel = () => {
                             width={1080}
                             height={1920}
                             className="rounded-md hover:brightness-[.3] transition-all object-fill"
+                            alt={`${project.title} preview`}
                           />
                           <span className="pointer-events-none invisible absolute align-middle group-hover:visible">View</span>
                         </div>  

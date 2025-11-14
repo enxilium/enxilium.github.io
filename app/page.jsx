@@ -1,276 +1,118 @@
-/* eslint-disable react/no-unescaped-entities */
-"use client"
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import '@styles/home.css';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import React from 'react';
+import "@styles/home.css";
+import ParallaxHero from "@/components/ParallaxHero";
+import ForestExperience from "@/components/ForestExperience";
+import QualityGate from "@/components/QualityGate";
+import { SceneProvider, useSceneController } from "@/context/SceneContext";
+import { useEffect, useRef } from "react";
 
-/* Components */
-import { Button } from '@/components/ui/button'
-import { FiDownload } from "react-icons/fi";
-import Social from '@/components/Socials'
-import MainCarousel from '@/components/MainCarousel'
-import { TypeAnimation } from 'react-type-animation';
-import Stats from '@/components/Stats'
-
-const Home = () => {
-
-  const [color, setColor] = useState("#66b088");
+const ScrollScenes = () => {
+  const {
+    heroRef,
+    forestRef,
+    scrollContainerRef,
+    setScene,
+    scene,
+    programmaticScrollRef,
+    registerProgrammaticScrollEnd,
+  } = useSceneController();
+  const scrollTimeoutRef = useRef(null);
 
   useEffect(() => {
-    const handleMouseMove = (event) => {
-      const xValue = event.clientX - window.innerWidth/2;
-      const yValue = event.clientY - window.innerHeight/2;
+    const container = scrollContainerRef.current;
+    const heroSection = heroRef.current;
+    const forestSection = forestRef.current;
 
-      const parallaxElements = document.querySelectorAll('.parallax');
-      parallaxElements.forEach((el) => {
-        let speedX = el.dataset.speedx;
-        let speedY = el.dataset.speedy;
-        el.style.transform = `translateX(calc(-50% + ${-xValue * speedX}px)) 
-        translateY(calc(-50% + ${yValue * speedY}px))`;
-      });
-    };
+    if (!container || !heroSection || !forestSection) {
+      return undefined;
+    }
 
-    document.addEventListener('mousemove', handleMouseMove);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const sectionId = entry.target.id || entry.target.getAttribute("data-debug-id") || "unknown";
+
+          if (entry.isIntersecting) {
+            console.log("[ScrollScenes] Intersection observed", {
+              sectionId,
+              scene,
+              programmatic: programmaticScrollRef.current,
+              timestamp: Date.now(),
+            });
+          }
+
+          if (entry.target === heroSection) {
+            if (scene === "forest-entry") return;
+            setScene("hero");
+          } else if (entry.target === forestSection && scene !== "forest-travel") {
+            setScene("forest-entry");
+          }
+        });
+      },
+      {
+        root: container,
+        threshold: 0.6,
+      }
+    );
+
+    observer.observe(heroSection);
+    observer.observe(forestSection);
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      observer.disconnect();
+    };
+  }, [forestRef, heroRef, scrollContainerRef, scene, setScene, programmaticScrollRef]);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return undefined;
+
+    const handleScroll = () => {
+      if (!programmaticScrollRef.current) return;
+
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+
+      scrollTimeoutRef.current = setTimeout(() => {
+        registerProgrammaticScrollEnd();
+      }, 180);
     };
 
-  }, []);
+    container.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, [programmaticScrollRef, registerProgrammaticScrollEnd, scrollContainerRef]);
 
   return (
-    <div>
-      {
-        <>
-          <div className="vignette" />
-          <span className="shootingStar"></span>
-          <span className="shootingStar"></span>
-          <Image
-            src="/Images/Layer 7.png"
-            data-speedx="0.027"
-            data-speedy="0.027"
-            animation-direction="vertical"
-            data-distance={-200}
-            className="parallax layer7"
-            alt="bg"
-            width={2560}
-            height={1920}
-          />
-          <Image
-            src="/Images/Layer 6.png"
-            data-speedx="0.059"
-            data-speedy="0.059"
-            animation-direction="vertical"
-            data-distance={850}
-            className="parallax layer6"
-            width={2560}
-            height={844}
-            alt = "layer"
-          />
-          <Image
-            src="/Images/Layer 5.png"
-            data-speedx="0.08"
-            data-speedy="0.08"
-            animation-direction="horizontal"
-            data-distance={-200}
-            className="parallax layer5"
-            width={3389}
-            height={716}
-            alt = "layer"
-          />
-          <Image
-            src="/Images/Layer 4.png"
-            data-speedx="0.065"
-            data-speedy="0.065"
-            animation-direction="horizontal"
-            data-distance={-200}
-            className="parallax layer4"
-            width={3280}
-            height={788}
-            alt = "layer"
-          />
-          <Image
-            src="/Images/fog.png"
-            data-speedx="0.25"
-            data-speedy="0.25"
-            animation-direction="horizontal"
-            data-distance={-200}
-            className="parallax fog"
-            width={2560}
-            height={1204}
-            alt = "layer"
-          />
-          <Image
-            src="/Images/Layer 3.png"
-            data-speedx="0.1"
-            data-speedy="0.1"
-            animation-direction="horizontal"
-            data-distance={-200}
-            className="parallax layer3"
-            width={605}
-            height={366}
-            alt = "layer"
-          />
-          <div
-            data-speedx="0.125"
-            data-speedy="0.125"
-            animation-direction="text"
-            data-distance={-200}
-            className="parallax name text-[6.5rem] lg:text-[10.5rem]"
-          >
-            <span class="select-none">Jace Mu</span>
-          </div>
-          <Image
-            src="/Images/Layer 2.png"
-            data-speedx="0.15"
-            data-speedy="0.15"
-            animation-direction="horizontal"
-            data-distance={-200}
-            className="parallax layer2"
-            width={2560}
-            height={726}
-            alt = "layer"
-          />
-          <Image
-            src="/Images/Layer 1.png"
-            data-speedx="0.22"
-            data-speedy="0.22"
-            animation-direction="horizontal"
-            data-distance={-200}
-            className="parallax layer1"
-            width={2560}
-            height={602}
-            alt = "layer"
-          />
-          <div
-            data-speedx="0.125"
-            data-speedy="0.125"
-            animation-direction="text"
-            data-distance={-200}
-            className="parallax slogan text-[1.5rem] lg:text-[2.5rem] item-center justify-center flex"
-          >
-            <p id="sloganText">Welcome to my story.</p>
-          </div>
-          <Image
-            src="/Images/moon.png"
-            data-speedx="0.027"
-            data-speedy="0.027"
-            animation-direction="vertical"
-            data-distance={-100}
-            className="parallax moon"
-            width={264}
-            height={264}
-            alt = "layer"
-          />
-          <Image src="/Images/light.png" className="light" 
-            width={2560}
-            height={1308}
-            alt = "layer"
-          />
-          <Image src="/Images/scrollArrow.png" className="scrollArrow" 
-            width={2560}
-            height={1308}
-            alt = "layer"
-          />
+    <main
+      ref={scrollContainerRef}
+      tabIndex={0}
+      className="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth"
+    >
+      <ParallaxHero ref={heroRef} />
+      <ForestExperience ref={forestRef} />
+    </main>
+  );
+};
 
-          {/* Content */}
-            <div className="absolute h-max top-[100%] w-screen bottom-0 z-50 bg-black">
-              <section className="h-[80%]">
-                <div className="container mx-auto mt-[5%] h-full">
-                  <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 mx-10">
-                    {/* Text */}
-                    <div className="text-center xl:text-left">
-                      <div className="container p-0 text-xl" style={{color: color}}>
-                        <TypeAnimation
-                          sequence={[
-                            "Software Engineer",
-                            500,
-                            () => {
-                              setColor("#66b088");
-                            },
-                            "Data Scientist",
-                            900,
-                            () => {
-                              setColor("#66b088");
-                            },
-                            "Creative Writer",
-                            400,
-                            () => {
-                              setColor("#66b088");
-                            },
-                            "Music Producer",
-                            500,
-                            () => {
-                              setColor("#66b088");
-                            },
-                          ]}
-                          repeat={Infinity}
-                          speed={{
-                            type: "keyStrokeDelayInMs",
-                            value: 100, //the higher the value the slower the letters
-                          }} //This is the speed of typing in milliseconds
-                          deletionSpeed={50}
-                          wrapper="span"
-                          className="ml-1"
-                        />
-                      </div>
-                      <h1 className="h1">
-                        Hey! I'm <br /> <span className="text-accent"> Jace </span>
-                      </h1>
-                      <p className="max-w-[500px] mb-9 mt-5 text-white/80">
-                        As an aspiring leader and project-based learner, I seek to pursue my passions while advancing 
-                        my career and leading positive change in the world with my own two hands.
-                      </p>
-                      {/* Button/Social Links */}
-                      <div className="flex flex-col xl:flex-row items-center gap-8">
-                        <Button asChild 
-                          variants="outline" 
-                          size="lg" 
-                          className="uppercase flex items-center gap-2"
-                          download=""
-                        >
-                          <Link 
-                            href="/resume.pdf" 
-                            download="resume"
-                            alt="alt text"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <span>Resume</span>
-                            <FiDownload className="text-xl"/>
-                          </Link>
-                        </Button>
+const Home = () => {
+  return (
+    <SceneProvider>
+      <QualityGate />
+      <ScrollScenes />
+    </SceneProvider>
+  );
+};
 
-                        <div className="mb-8 xl:mb-0">
-                          <Social 
-                            containerStyles="flex gap-6" 
-                            iconStyles="w-9 h-9 border border-accent 
-                            rounded-full flex justify-center items-center 
-                            text-accent text-base hover:bg-accent hover:text-primary 
-                            hover:text-primary hover:transition-all duration-500"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    {/* Image */}
-                    
-                    <h1 className="h2 xl:hidden">HIGHLIGHTS</h1>
-                    <MainCarousel />
-                  </div>
-                  <Stats/>
-                </div>
-              </section>
-            </div>
-      </>      
-      }
-    </div>
-  )
-}
-
-export default Home
+export default Home;
 
     

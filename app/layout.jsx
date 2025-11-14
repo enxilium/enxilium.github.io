@@ -2,7 +2,6 @@ import '@styles/globals.css';
 import Header from '@components/Header.jsx';
 import { Poppins } from 'next/font/google';
 import PageTransition from '@components/PageTransition';
-import StairTransition from '@components/StairTransition';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -20,8 +19,6 @@ const BaseLayout = ({children}) => {
   return (
     <html lang="en">
       <body className={poppins.variable}>
-        <Header/>
-        <StairTransition></StairTransition>
         <PageTransition>
           {children}
         </PageTransition>

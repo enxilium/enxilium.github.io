@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8080",
     "lint": "next lint"
   },
   "dependencies": {
@@ -17,6 +17,8 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@react-three/drei": "^9.105.3",
+    "@react-three/fiber": "^8.15.16",
     "bootstrap": "^5.3.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -32,9 +34,11 @@
     "react-icons": "^5.2.1",
     "react-intersection-observer": "^9.10.2",
     "react-type-animation": "^3.2.0",
+    "sharp": "^0.34.4",
     "swiper": "^11.1.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.161.0",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
